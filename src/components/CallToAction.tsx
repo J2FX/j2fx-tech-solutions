@@ -1,5 +1,4 @@
-
-import { Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
@@ -56,17 +55,6 @@ const CallToAction = () => {
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                  <Phone className="text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">Telefone</h3>
-                  <p className="text-white/90">(16) 99999-9999</p>
-                  <p className="text-white/90">(16) 3712-0000</p>
-                </div>
-              </div>
-              
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                   <Mail className="text-white" />

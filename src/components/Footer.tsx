@@ -1,5 +1,5 @@
 
-import { MapPin, Mail, Phone, Facebook, Linkedin, Instagram } from 'lucide-react';
+import { MapPin, Mail, Phone, Whatsapp, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,25 +19,31 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://www.instagram.com/j2fxtecnologia" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-j2fx-medium transition-colors"
-                aria-label="Facebook"
+                aria-label="Instagram"
               >
-                <Facebook size={18} />
+                <Instagram size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/j2fx-tecnologia" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-j2fx-medium transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://wa.me/5516981699137" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-j2fx-medium transition-colors"
-                aria-label="Instagram"
+                aria-label="WhatsApp"
               >
-                <Instagram size={18} />
+                <Whatsapp size={18} />
               </a>
             </div>
           </div>
@@ -53,9 +59,6 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#services" className="text-white/80 hover:text-white transition-colors">Serviços</a>
-              </li>
-              <li>
-                <a href="#testimonials" className="text-white/80 hover:text-white transition-colors">Clientes</a>
               </li>
               <li>
                 <a href="#contact" className="text-white/80 hover:text-white transition-colors">Contato</a>
@@ -75,7 +78,7 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone className="text-j2fx-accent flex-shrink-0" size={18} />
                 <span className="text-white/80">
-                  (16) 99999-9999
+                  (16) 98169-9137
                 </span>
               </li>
               <li className="flex items-center gap-3">

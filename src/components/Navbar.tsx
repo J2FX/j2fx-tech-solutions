@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Code, Server, Database } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,19 +19,20 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Início', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Serviços', href: '#services' },
-    { name: 'Clientes', href: '#testimonials' },
+    { name: 'Início', href: '#home', icon: <Code size={16} /> },
+    { name: 'Sobre', href: '#about', icon: <Server size={16} /> },
+    { name: 'Serviços', href: '#services', icon: <Database size={16} /> },
     { name: 'Contato', href: '#contact' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-j2fx-dark/95 backdrop-blur-sm shadow-lg py-3' : 'bg-j2fx-dark/80 backdrop-blur-sm py-5'
+    }`}>
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
-          <span className="text-2xl font-bold text-j2fx-dark">
+          <span className="text-2xl font-bold text-white">
             J2FX<span className="text-j2fx-accent">.</span>
           </span>
         </a>
@@ -42,19 +43,20 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-700 hover:text-j2fx-medium transition-colors duration-300 font-medium link-hover"
+              className="text-white hover:text-j2fx-accent transition-colors duration-300 font-medium flex items-center gap-2"
             >
+              {link.icon && link.icon}
               {link.name}
             </a>
           ))}
-          <Button className="btn-primary">
+          <Button className="bg-j2fx-accent hover:bg-j2fx-accent/80 text-j2fx-dark font-medium">
             Fale Conosco
           </Button>
         </div>
 
         {/* Mobile Navigation Trigger */}
         <button 
-          className="md:hidden p-2 text-j2fx-dark"
+          className="md:hidden p-2 text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -62,19 +64,20 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6">
+          <div className="md:hidden absolute top-full left-0 w-full bg-j2fx-dark/95 backdrop-blur-sm shadow-lg py-4 px-6">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-700 hover:text-j2fx-medium transition-colors font-medium"
+                  className="text-white hover:text-j2fx-accent transition-colors font-medium flex items-center gap-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
+                  {link.icon && link.icon}
                   {link.name}
                 </a>
               ))}
-              <Button className="btn-primary self-start">
+              <Button className="bg-j2fx-accent hover:bg-j2fx-accent/80 text-j2fx-dark font-medium self-start">
                 Fale Conosco
               </Button>
             </div>

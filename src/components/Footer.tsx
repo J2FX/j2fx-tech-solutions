@@ -1,5 +1,5 @@
 
-import { MapPin, Mail, Phone, Whatsapp, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Mail, Phone, MessageSquare, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -43,7 +43,7 @@ const Footer = () => {
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-j2fx-medium transition-colors"
                 aria-label="WhatsApp"
               >
-                <Whatsapp size={18} />
+                <MessageSquare size={18} />
               </a>
             </div>
           </div>

@@ -1,5 +1,5 @@
 
-import { MapPin, Mail, Phone, MessageSquare, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Mail, Instagram, Linkedin, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -76,12 +76,6 @@ const Footer = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="text-j2fx-accent flex-shrink-0" size={18} />
-                <span className="text-white/80">
-                  (16) 98169-9137
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
                 <Mail className="text-j2fx-accent flex-shrink-0" size={18} />
                 <span className="text-white/80">
                   contato@j2fxtecnologia.com.br
@@ -93,6 +87,7 @@ const Footer = () => {
         
         <div className="border-t border-white/20 mt-12 pt-6 text-center text-white/60">
           <p>&copy; {currentYear} J2FX Tecnologia. Todos os direitos reservados.</p>
+          <p className="mt-2 text-white/80">(16) 98169-9137</p>
         </div>
       </div>
     </footer>

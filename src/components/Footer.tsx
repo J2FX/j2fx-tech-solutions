@@ -74,17 +74,11 @@ const Footer = () => {
                 <span className="text-white/80">
                   Franca-SP, Brasil
                 </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="text-j2fx-accent flex-shrink-0" size={18} />
-                <span className="text-white/80">
-                  (16) 98169-9137
-                </span>
-              </li>
+              </li> 
               <li className="flex items-center gap-3">
                 <Mail className="text-j2fx-accent flex-shrink-0" size={18} />
                 <span className="text-white/80">
-                  contato@j2fxtecnologia.com.br
+                  tecnologia@j2fx.com.br
                 </span>
               </li>
             </ul>

@@ -1,9 +1,11 @@
-
 import { Shield, Code, Users } from 'lucide-react';
+import TechBackground from './TechBackground';
 
 const AboutUs = () => {
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-white relative overflow-hidden">
+      <TechBackground />
+      
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-j2fx-dark">
@@ -65,8 +67,8 @@ const AboutUs = () => {
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-j2fx-medium/10 rounded-lg"></div>
             <div className="relative z-10 bg-white shadow-xl p-1 rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80" 
-                alt="Equipe J2FX Tecnologia" 
+                src="/lovable-uploads/a89b8f4a-9393-4329-8709-9390bf7d52cb.png"
+                alt="J2FX Tecnologia" 
                 className="rounded-lg w-full h-auto"
               />
             </div>

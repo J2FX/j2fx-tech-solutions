@@ -1,27 +1,20 @@
 
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import TechBackground from './TechBackground';
 
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-r from-j2fx-dark to-j2fx-medium pt-20">
-      <TechBackground />
+      {/* Background overlay with pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0aDR2MWgtNHptMC01aDR2MWgtNHptMTMtNS43NWg0djFoLTR6TTMxIDIzaDE4djFIMzF6TTMxIDI4aDE4djFIMzF6TTMxIDMzaDE4djFIMzF6TTMxIDM4aDE4djFIMzF6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=')]"></div>
       
       <div className="container-custom grid md:grid-cols-2 gap-12 relative z-10">
         {/* Hero Text Content */}
         <div className="flex flex-col justify-center text-white animate-fade-in">
-          <div className="mb-8">
-            <img 
-              src="/lovable-uploads/51552c13-b924-48ca-9eea-e652c9b92dd0.png"
-              alt="J2FX Logo"
-              className="w-64 h-auto mb-6"
-            />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-              Tecnologia que<br />
-              <span className="text-j2fx-accent">transforma</span> seu negócio
-            </h1>
-          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+            Tecnologia que<br />
+            <span className="text-j2fx-accent">transforma</span> seu negócio
+          </h1>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-md">
             Soluções tecnológicas personalizadas para elevar sua empresa a um novo patamar de inovação e eficiência.
           </p>
@@ -47,15 +40,17 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Hero Image with Tech Pattern */}
-        <div className="hidden md:flex items-center justify-center relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-j2fx-accent/20 to-transparent opacity-30 rounded-2xl"></div>
-          <div className="w-full h-full max-w-lg">
-            <img 
-              src="/lovable-uploads/1dfd95e2-842b-42b4-ae3b-944cdf5eb57c.png"
-              alt="J2FX Tecnologia"
-              className="w-full h-auto rounded-2xl shadow-2xl"
-            />
+        {/* Hero Image */}
+        <div className="hidden md:flex items-center justify-center">
+          <div className="relative w-full max-w-lg h-[400px] animate-slide-in">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-j2fx-light/20 to-j2fx-accent/20 rounded-2xl blur-3xl"></div>
+            <div className="relative w-full h-full flex items-center justify-center">
+              <img 
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
+                alt="Tecnologia empresarial" 
+                className="rounded-xl shadow-2xl object-cover max-h-[400px]"
+              />
+            </div>
           </div>
         </div>
       </div>

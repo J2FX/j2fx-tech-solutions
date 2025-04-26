@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, CircuitBoard, Server, Code } from 'lucide-react';
+import { Menu, X, Code, Server, Database } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,11 +32,9 @@ const Navbar = () => {
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
-          <img 
-            src="/lovable-uploads/51552c13-b924-48ca-9eea-e652c9b92dd0.png"
-            alt="J2FX Logo"
-            className="h-8 w-auto"
-          />
+          <span className="text-2xl font-bold text-white">
+            J2FX<span className="text-j2fx-accent">.</span>
+          </span>
         </a>
 
         {/* Desktop Navigation */}

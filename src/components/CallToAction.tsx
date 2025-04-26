@@ -61,8 +61,7 @@ const CallToAction = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-1">Email</h3>
-                  <p className="text-white/90">contato@j2fxtecnologia.com.br</p>
-                  <p className="text-white/90">suporte@j2fxtecnologia.com.br</p>
+                  <p className="text-white/90">contato@j2fx.com.br</p>
                 </div>
               </div>
             </div>

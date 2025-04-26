@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, CircuitBoard, Server, Code } from 'lucide-react';
+import { Menu, X, CircuitBoard, Server, Code, Database } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

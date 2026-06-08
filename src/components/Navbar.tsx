@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Code, Server, Database } from 'lucide-react';
@@ -11,7 +10,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -21,7 +20,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Início', href: '#home', icon: <Code size={16} /> },
     { name: 'Sobre', href: '#about', icon: <Server size={16} /> },
-    { name: 'Serviços', href: '#services', icon: <Database size={16} /> },
+    { name: 'Soluções', href: '#services', icon: <Database size={16} /> },
     { name: 'Contato', href: '#contact' },
   ];
 
@@ -30,14 +29,12 @@ const Navbar = () => {
       isScrolled ? 'bg-j2fx-dark/95 backdrop-blur-sm shadow-lg py-3' : 'bg-j2fx-dark/80 backdrop-blur-sm py-5'
     }`}>
       <div className="container-custom flex items-center justify-between">
-        {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
           <span className="text-2xl font-bold text-white">
             J2FX<span className="text-j2fx-accent">.</span>
           </span>
         </a>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
@@ -49,20 +46,19 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button className="bg-j2fx-accent hover:bg-j2fx-accent/80 text-j2fx-dark font-medium">
-            Fale Conosco
+          <Button asChild className="bg-j2fx-accent hover:bg-j2fx-accent/80 text-j2fx-dark font-medium">
+            <a href="#contact">Pedir proposta</a>
           </Button>
         </div>
 
-        {/* Mobile Navigation Trigger */}
-        <button 
+        <button
           className="md:hidden p-2 text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Navigation Menu */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-j2fx-dark/95 backdrop-blur-sm shadow-lg py-4 px-6">
             <div className="flex flex-col space-y-4">
@@ -77,8 +73,8 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button className="bg-j2fx-accent hover:bg-j2fx-accent/80 text-j2fx-dark font-medium self-start">
-                Fale Conosco
+              <Button asChild className="bg-j2fx-accent hover:bg-j2fx-accent/80 text-j2fx-dark font-medium self-start">
+                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Pedir proposta</a>
               </Button>
             </div>
           </div>

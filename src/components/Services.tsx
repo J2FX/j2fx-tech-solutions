@@ -1,10 +1,14 @@
-
-import { Database, Code, Cloud, Shield, Smartphone } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Code, LineChart, Search, Shield, Smartphone } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Simulação do motion para animação
-const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string}) => {
+type ServiceCardProps = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+const ServiceCard = ({ icon: Icon, title, description }: ServiceCardProps) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 card-hover">
       <div className="w-12 h-12 rounded-lg bg-j2fx-medium/10 flex items-center justify-center mb-6">
@@ -24,29 +28,29 @@ const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: str
 
 const services = [
   {
-    icon: Database,
-    title: 'Consultoria em Tecnologia',
-    description: 'Análise completa da infraestrutura e processos tecnológicos para implementar soluções que otimizem os recursos da sua empresa.'
-  },
-  {
     icon: Code,
-    title: 'Desenvolvimento de Sistemas',
-    description: 'Criação de soluções sob medida que automatizam processos, aumentam a produtividade e geram valor para o seu negócio.'
+    title: 'Criação de Sites Profissionais',
+    description: 'Sites institucionais modernos, responsivos e alinhados ao posicionamento da sua empresa para gerar mais confiança desde o primeiro acesso.'
   },
   {
-    icon: Cloud,
-    title: 'Infraestrutura e Cloud',
-    description: 'Implementação e gerenciamento de ambientes em nuvem, servidores e redes que garantem disponibilidade e escalabilidade.'
+    icon: LineChart,
+    title: 'Landing Pages de Conversão',
+    description: 'Páginas focadas em campanhas, lançamentos e captação de leads, com chamadas claras e estrutura pensada para transformar visita em contato.'
+  },
+  {
+    icon: Search,
+    title: 'SEO e Performance',
+    description: 'Ajustes técnicos, velocidade, metadados e boas práticas para melhorar a presença nos buscadores e a experiência de navegação.'
   },
   {
     icon: Shield,
-    title: 'Segurança da Informação',
-    description: 'Proteção robusta contra ameaças digitais, auditorias de segurança e implementação de políticas para proteger seus dados.'
+    title: 'Hospedagem e Segurança',
+    description: 'Publicação, HTTPS, domínio, backups e estrutura confiável para seu site ficar online com estabilidade e manutenção simples.'
   },
   {
     icon: Smartphone,
-    title: 'Suporte Técnico Especializado',
-    description: 'Equipe disponível para resolver problemas, realizar manutenções e assegurar o funcionamento contínuo de sua infraestrutura.'
+    title: 'Manutenção e Evolução',
+    description: 'Atualizações de conteúdo, melhorias contínuas e suporte para manter sua presença digital atualizada conforme o negócio cresce.'
   }
 ];
 
@@ -56,19 +60,19 @@ const Services = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-j2fx-dark">
-            Nossos <span className="text-j2fx-medium">Serviços</span>
+            Soluções para <span className="text-j2fx-medium">vender melhor online</span>
           </h2>
           <div className="mx-auto w-24 h-1 bg-j2fx-accent mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Oferecemos um conjunto completo de soluções tecnológicas para impulsionar a eficiência e competitividade do seu negócio.
+            Da primeira versão do site à otimização contínua, cuidamos da parte técnica e estratégica para sua empresa aparecer com mais profissionalismo.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <ServiceCard 
-              key={index} 
-              icon={service.icon} 
+            <ServiceCard
+              key={index}
+              icon={service.icon}
               title={service.title}
               description={service.description}
             />
@@ -78,7 +82,7 @@ const Services = () => {
         <div className="text-center mt-12">
           <Button asChild className="btn-primary">
             <a href="#contact">
-              Solicite uma consultoria gratuita
+              Quero avaliar meu site
             </a>
           </Button>
         </div>

@@ -1,5 +1,4 @@
-
-import { Shield, Code, Users } from 'lucide-react';
+import { Code, Shield, Users } from 'lucide-react';
 
 const AboutUs = () => {
   return (
@@ -11,21 +10,19 @@ const AboutUs = () => {
           </h2>
           <div className="mx-auto w-24 h-1 bg-j2fx-accent mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Somos uma empresa especializada em fornecer soluções tecnológicas completas e personalizadas para negócios de todos os tamanhos.
+            Unimos estratégia, design e tecnologia para criar sites que representam bem a empresa e ajudam o cliente certo a dar o próximo passo.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h3 className="text-2xl font-bold mb-4 text-j2fx-dark">
-              Nossa Missão
+              Mais do que colocar uma página no ar
             </h3>
             <p className="text-gray-600 mb-6">
-              Transformar a maneira como as empresas utilizam a tecnologia, 
-              oferecendo soluções inovadoras e sob medida que impulsionam 
-              a eficiência operacional, segurança e crescimento sustentável.
+              Cada projeto começa entendendo o negócio, o público e o objetivo comercial. A partir disso, construímos uma presença digital rápida, clara e preparada para gerar contatos.
             </p>
-            
+
             <h3 className="text-2xl font-bold mb-4 text-j2fx-dark">
               Por que escolher a J2FX?
             </h3>
@@ -35,8 +32,8 @@ const AboutUs = () => {
                   <Shield size={16} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-j2fx-dark">Expertise Comprovada</h4>
-                  <p className="text-gray-600">Nossa equipe é formada por especialistas com ampla experiência em tecnologia empresarial.</p>
+                  <h4 className="font-semibold text-j2fx-dark">Base técnica confiável</h4>
+                  <p className="text-gray-600">Cuidamos de domínio, hospedagem, HTTPS, performance e estrutura para o site ficar pronto para uso profissional.</p>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -44,8 +41,8 @@ const AboutUs = () => {
                   <Code size={16} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-j2fx-dark">Soluções Sob Medida</h4>
-                  <p className="text-gray-600">Cada projeto é único e desenvolvido de acordo com as necessidades específicas do seu negócio.</p>
+                  <h4 className="font-semibold text-j2fx-dark">Projeto sob medida</h4>
+                  <p className="text-gray-600">Nada de site genérico: a estrutura, os textos e as chamadas são pensados para o momento e a oferta da sua empresa.</p>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -53,8 +50,8 @@ const AboutUs = () => {
                   <Users size={16} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-j2fx-dark">Atendimento Personalizado</h4>
-                  <p className="text-gray-600">Oferecemos um relacionamento próximo e contínuo, compreendendo profundamente os objetivos do seu negócio.</p>
+                  <h4 className="font-semibold text-j2fx-dark">Atendimento próximo</h4>
+                  <p className="text-gray-600">Acompanhamos do briefing à publicação, com comunicação clara e suporte para evoluir o site depois do lançamento.</p>
                 </div>
               </li>
             </ul>
@@ -64,9 +61,9 @@ const AboutUs = () => {
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-j2fx-accent/10 rounded-lg"></div>
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-j2fx-medium/10 rounded-lg"></div>
             <div className="relative z-10 bg-white shadow-xl p-1 rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80" 
-                alt="Equipe J2FX Tecnologia" 
+              <img
+                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
+                alt="Equipe analisando presença digital de uma empresa"
                 className="rounded-lg w-full h-auto"
               />
             </div>

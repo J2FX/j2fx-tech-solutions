@@ -1,6 +1,13 @@
-import { Code, LineChart, Search, Shield, Smartphone } from 'lucide-react';
+import {
+  ArrowRight,
+  CloudCog,
+  DatabaseBackup,
+  Gauge,
+  Headphones,
+  Network,
+  ShieldCheck,
+} from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 type ServiceCardProps = {
   icon: LucideIcon;
@@ -8,83 +15,73 @@ type ServiceCardProps = {
   description: string;
 };
 
+const services: ServiceCardProps[] = [
+  {
+    icon: Network,
+    title: 'Consultoria de infraestrutura',
+    description: 'Mapeamento de gargalos, riscos e prioridades para criar uma base técnica mais estável e preparada para crescimento.',
+  },
+  {
+    icon: CloudCog,
+    title: 'Cloud e ambientes híbridos',
+    description: 'Planejamento de migração, organização de serviços e implantação com foco em segurança, custo e continuidade.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Segurança de dados',
+    description: 'Boas práticas de acesso, proteção, segmentação e revisão de pontos críticos para reduzir exposição operacional.',
+  },
+  {
+    icon: Headphones,
+    title: 'Suporte gerenciado',
+    description: 'Acompanhamento técnico para manter usuários, estações, rede e sistemas funcionando com atendimento claro.',
+  },
+  {
+    icon: DatabaseBackup,
+    title: 'Backup e recuperação',
+    description: 'Rotinas de cópia, restauração e contingência para reduzir impacto em falhas, perdas ou incidentes.',
+  },
+  {
+    icon: Gauge,
+    title: 'Performance e custos',
+    description: 'Análise de recursos, contratos e consumo para melhorar velocidade, previsibilidade e eficiência do ambiente.',
+  },
+];
+
 const ServiceCard = ({ icon: Icon, title, description }: ServiceCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 card-hover">
-      <div className="w-12 h-12 rounded-lg bg-j2fx-medium/10 flex items-center justify-center mb-6">
-        <Icon className="text-j2fx-medium" size={24} />
+    <article className="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-j2fx-accent/50 hover:shadow-xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-j2fx-ink text-j2fx-accent transition-colors duration-300 group-hover:bg-j2fx-accent group-hover:text-j2fx-ink">
+        <Icon className="h-6 w-6" />
       </div>
-      <h3 className="text-xl font-bold mb-3 text-j2fx-dark">{title}</h3>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <a href="#contact" className="text-j2fx-medium hover:text-j2fx-dark font-medium inline-flex items-center gap-2">
-        Saiba mais
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 010-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-        </svg>
+      <h3 className="mb-3 text-xl font-bold text-j2fx-ink">{title}</h3>
+      <p className="mb-5 leading-7 text-slate-600">{description}</p>
+      <a href="#contact" className="inline-flex items-center gap-2 font-semibold text-j2fx-medium hover:text-j2fx-ink">
+        Explorar solução
+        <ArrowRight className="h-4 w-4" />
       </a>
-    </div>
+    </article>
   );
 };
 
-const services = [
-  {
-    icon: Code,
-    title: 'Criação de Sites Profissionais',
-    description: 'Sites institucionais modernos, responsivos e alinhados ao posicionamento da sua empresa para gerar mais confiança desde o primeiro acesso.'
-  },
-  {
-    icon: LineChart,
-    title: 'Landing Pages de Conversão',
-    description: 'Páginas focadas em campanhas, lançamentos e captação de leads, com chamadas claras e estrutura pensada para transformar visita em contato.'
-  },
-  {
-    icon: Search,
-    title: 'SEO e Performance',
-    description: 'Ajustes técnicos, velocidade, metadados e boas práticas para melhorar a presença nos buscadores e a experiência de navegação.'
-  },
-  {
-    icon: Shield,
-    title: 'Hospedagem e Segurança',
-    description: 'Publicação, HTTPS, domínio, backups e estrutura confiável para seu site ficar online com estabilidade e manutenção simples.'
-  },
-  {
-    icon: Smartphone,
-    title: 'Manutenção e Evolução',
-    description: 'Atualizações de conteúdo, melhorias contínuas e suporte para manter sua presença digital atualizada conforme o negócio cresce.'
-  }
-];
-
 const Services = () => {
   return (
-    <section id="services" className="section-padding bg-gray-50">
+    <section id="services" className="section-padding bg-slate-50">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-j2fx-dark">
-            Soluções para <span className="text-j2fx-medium">vender melhor online</span>
+        <div className="mb-14 max-w-3xl">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-j2fx-medium">Soluções</p>
+          <h2 className="mb-5 text-3xl font-bold text-j2fx-ink md:text-4xl">
+            Tecnologia organizada para a operação não parar
           </h2>
-          <div className="mx-auto w-24 h-1 bg-j2fx-accent mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Da primeira versão do site à otimização contínua, cuidamos da parte técnica e estratégica para sua empresa aparecer com mais profissionalismo.
+          <p className="text-lg leading-8 text-slate-600">
+            Atuamos onde infraestrutura, suporte e segurança se conectam ao resultado do negócio: menos improviso, mais previsibilidade e decisões técnicas com clareza.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <ServiceCard key={service.title} {...service} />
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button asChild className="btn-primary">
-            <a href="#contact">
-              Quero avaliar meu site
-            </a>
-          </Button>
         </div>
       </div>
     </section>

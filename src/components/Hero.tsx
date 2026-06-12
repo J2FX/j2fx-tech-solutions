@@ -1,77 +1,94 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, LockKeyhole, Network, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-r from-j2fx-dark to-j2fx-medium pt-20">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0aDR2MWgtNHptMC01aDR2MWgtNHptMTMtNS43NWg0djFoLTR6TTMxIDIzaDE4djFIMzF6TTMxIDI4aDE4djFIMzF6TTMxIDMzaDE4djFIMzF6TTMxIDM4aDE4djFIMzF6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=')]"></div>
+    <section id="home" className="relative min-h-screen overflow-hidden bg-j2fx-ink pt-24 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,200,255,0.20),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(42,100,150,0.24),transparent_30%),linear-gradient(135deg,#07111d_0%,#0f1419_52%,#102a42_100%)]" />
+      <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:48px_48px]" />
 
-      <div className="container-custom grid md:grid-cols-2 gap-12 relative z-10">
-        <div className="flex flex-col justify-center text-white animate-fade-in">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-j2fx-accent">
-            Sites profissionais para empresas
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-            Seu site precisa passar confiança antes do primeiro contato
+      <div className="container-custom relative z-10 grid min-h-[calc(100vh-6rem)] items-center gap-12 pb-16 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="max-w-3xl animate-fade-in">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
+            <ShieldCheck className="h-4 w-4 text-j2fx-accent" />
+            Consultoria, infraestrutura e suporte para empresas
+          </div>
+
+          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+            Infraestrutura de TI que escala com seu negócio
           </h1>
-          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-xl">
-            Criamos sites modernos, rápidos e pensados para gerar oportunidades, apresentar sua empresa com autoridade e facilitar o contato de novos clientes.
+
+          <p className="mb-8 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
+            Planejamos, implementamos e sustentamos ambientes tecnológicos para empresas que precisam de segurança, disponibilidade e crescimento sem improviso.
           </p>
-          <div className="flex flex-wrap gap-4">
+
+          <div className="flex flex-col gap-3 sm:flex-row">
             <Button
               asChild
-              className="bg-white text-j2fx-dark hover:bg-j2fx-accent hover:text-white px-8 py-6 font-medium rounded-md transition-all duration-300 text-base"
+              className="h-12 rounded-md bg-j2fx-accent px-6 font-semibold text-j2fx-ink hover:bg-white"
             >
               <a href="#contact">
-                Solicitar orçamento
+                Agende seu diagnóstico gratuito
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button
               variant="outline"
               asChild
-              className="bg-transparent text-white hover:bg-white/10 border-white/30 hover:border-white px-8 py-6 font-medium rounded-md transition-all duration-300 text-base"
+              className="h-12 rounded-md border-white/25 bg-white/5 px-6 font-semibold text-white hover:bg-white/10 hover:text-white"
             >
-              <a href="#services">
-                Ver soluções
-              </a>
+              <a href="#services">Conheça as soluções</a>
             </Button>
           </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-4 max-w-xl text-sm text-white/80">
-            <div>
-              <strong className="block text-2xl text-white">SEO</strong>
-              Base técnica pronta para buscadores
-            </div>
-            <div>
-              <strong className="block text-2xl text-white">Mobile</strong>
-              Experiência pensada para celular
-            </div>
-            <div>
-              <strong className="block text-2xl text-white">CTA</strong>
-              Caminhos claros para conversão
-            </div>
+          <div className="mt-10 grid gap-4 text-sm text-slate-300 sm:grid-cols-3">
+            {['Diagnóstico técnico', 'Implantação planejada', 'Operação assistida'].map((item) => (
+              <div key={item} className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-j2fx-accent" />
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="hidden md:flex items-center justify-center">
-          <div className="relative w-full max-w-lg h-[400px] animate-slide-in">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-j2fx-light/20 to-j2fx-accent/20 rounded-2xl blur-3xl"></div>
-            <div className="relative w-full h-full flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
-                alt="Notebook com projeto de site em desenvolvimento"
-                className="rounded-xl shadow-2xl object-cover max-h-[400px]"
-              />
+        <div className="relative animate-slide-in">
+          <div className="rounded-lg border border-white/12 bg-white/8 p-4 shadow-2xl backdrop-blur-md">
+            <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
+              <div>
+                <p className="text-sm text-slate-400">Ambiente monitorado</p>
+                <p className="text-lg font-semibold">J2FX Control Center</p>
+              </div>
+              <div className="rounded-md bg-emerald-400/15 px-3 py-1 text-sm font-semibold text-emerald-200">
+                Online
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-md border border-white/10 bg-j2fx-ink/70 p-4">
+                <Network className="mb-4 h-8 w-8 text-j2fx-accent" />
+                <p className="text-sm text-slate-400">Rede</p>
+                <p className="mt-1 text-2xl font-bold">Mapeada</p>
+                <p className="mt-2 text-sm text-slate-400">visibilidade para decisões</p>
+              </div>
+              <div className="rounded-md border border-white/10 bg-j2fx-ink/70 p-4">
+                <LockKeyhole className="mb-4 h-8 w-8 text-j2fx-accent" />
+                <p className="text-sm text-slate-400">Segurança</p>
+                <p className="mt-1 text-2xl font-bold">Em camadas</p>
+                <p className="mt-2 text-sm text-slate-400">proteção por prioridade</p>
+              </div>
+            </div>
+
+            <div className="mt-4 rounded-md border border-cyan-300/20 bg-cyan-300/10 p-4">
+              <div className="mb-3 flex items-center justify-between text-sm">
+                <span className="text-cyan-100">Riscos mapeados</span>
+                <span className="font-semibold text-white">Diagnóstico ativo</span>
+              </div>
+              <div className="h-2 rounded-full bg-white/10">
+                <div className="h-2 w-4/5 rounded-full bg-j2fx-accent" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.63,118.92,158.25,56.44,321.39,56.44Z" className="fill-white"></path>
-        </svg>
       </div>
     </section>
   );

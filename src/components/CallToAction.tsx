@@ -1,23 +1,53 @@
-import { Mail, MessageSquare } from 'lucide-react';
+import { Mail, MessageSquare, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const whatsappUrl = 'https://wa.me/5516981699137?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20J2FX.';
 
 const CallToAction = () => {
   const [formData, setFormData] = useState({
+    interest: '',
     name: '',
     email: '',
     phone: '',
     company: '',
+    role: '',
     message: '',
+    newsletter: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  useEffect(() => {
+    const applyStoredInterest = () => {
+      const selectedInterest = window.sessionStorage.getItem('j2fx-selected-interest');
+
+      if (selectedInterest) {
+        setFormData(prev => ({
+          ...prev,
+          interest: selectedInterest,
+          message: prev.message || `Tenho interesse em ${selectedInterest}. Gostaria de saber mais detalhes.`,
+        }));
+      }
+    };
+
+    applyStoredInterest();
+    window.addEventListener('j2fx-interest-selected', applyStoredInterest);
+
+    return () => {
+      window.removeEventListener('j2fx-interest-selected', applyStoredInterest);
+    };
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const nextValue = type === 'checkbox' && e.target instanceof HTMLInputElement
+      ? e.target.checked ? 'sim' : ''
+      : value;
+
+    setFormData(prev => ({ ...prev, [name]: nextValue }));
   };
 
   const encode = (data: Record<string, string>) => {
@@ -46,11 +76,14 @@ const CallToAction = () => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({
+        interest: '',
         name: '',
         email: '',
         phone: '',
         company: '',
+        role: '',
         message: '',
+        newsletter: '',
       });
 
       setTimeout(() => {
@@ -63,53 +96,64 @@ const CallToAction = () => {
   };
 
   return (
-    <section id="contact" className="section-padding gradient-bg">
+    <section id="contact" className="section-padding bg-[linear-gradient(135deg,#07111d_0%,#0f1419_55%,#123653_100%)] text-white">
       <div className="container-custom">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Vamos transformar seu site em um canal de oportunidades
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-j2fx-accent">Contato</p>
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+              Solicite um diagnóstico gratuito da sua estrutura de TI
             </h2>
-            <p className="text-white/90 mb-8">
-              Conte o que sua empresa precisa. Nós avaliamos o cenário, indicamos o melhor caminho e montamos uma proposta objetiva para seu novo site ou landing page.
+            <p className="mb-8 text-lg leading-8 text-slate-300">
+              Conte rapidamente o cenário da empresa. A J2FX retorna com uma leitura inicial e o melhor próximo passo para infraestrutura, segurança, cloud ou suporte.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                  <Mail className="text-white" />
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-md bg-white/10">
+                  <Mail className="text-j2fx-accent" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-1">Email</h3>
-                  <p className="text-white/90">contato@j2fx.com.br</p>
+                  <h3 className="font-semibold">Email</h3>
+                  <p className="text-slate-300">contato@j2fx.com.br</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                  <MessageSquare className="text-white" />
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-md bg-white/10">
+                  <MessageSquare className="text-j2fx-accent" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-1">WhatsApp</h3>
+                  <h3 className="font-semibold">WhatsApp Business</h3>
                   <a
-                    href="https://wa.me/5516981699137"
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/90 hover:text-white"
+                    className="text-slate-300 hover:text-white"
                   >
-                    Chamar agora
+                    Fale com um especialista
                   </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-md bg-white/10">
+                  <ShieldCheck className="text-j2fx-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Próximo passo claro</h3>
+                  <p className="text-slate-300">Resposta inicial com direcionamento em até 24h úteis.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-8 shadow-lg">
-            <h3 className="text-2xl font-bold mb-6 text-j2fx-dark">Solicite uma avaliação gratuita</h3>
+          <div className="rounded-lg border border-white/10 bg-white p-6 text-j2fx-ink shadow-2xl md:p-8">
+            <h3 className="mb-2 text-2xl font-bold">Agendar diagnóstico</h3>
+            <p className="mb-6 text-slate-600">Preencha os dados para a J2FX entender seu cenário.</p>
 
             {submitSuccess ? (
-              <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-6">
-                <p className="text-green-700">
-                  Mensagem enviada com sucesso! Entraremos em contato em breve.
+              <div className="rounded-md border border-emerald-200 bg-emerald-50 p-4">
+                <p className="text-emerald-700">
+                  Recebemos sua solicitação. Entraremos em contato em até 24h úteis.
                 </p>
               </div>
             ) : (
@@ -126,94 +170,82 @@ const CallToAction = () => {
                     Não preencha este campo: <input name="bot-field" onChange={handleChange} />
                   </label>
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Nome
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="sm:col-span-2">
+                    <label htmlFor="interest" className="mb-1 block text-sm font-semibold text-slate-700">Tenho interesse em</label>
+                    <select
+                      id="interest"
+                      name="interest"
+                      value={formData.interest}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-j2fx-medium focus:border-j2fx-medium"
+                      className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30"
                       required
-                    />
+                    >
+                      <option value="">Selecione uma opção</option>
+                      <option value="Infraestrutura, cloud e suporte">Infraestrutura, cloud e suporte</option>
+                      <option value="Chatbot imobiliário">Chatbot imobiliário</option>
+                      <option value="Controle de vendas">Controle de vendas</option>
+                      <option value="Perfect Teams">Perfect Teams</option>
+                      <option value="Chatbot para reservas em restaurantes">Chatbot para reservas em restaurantes</option>
+                      <option value="Outro projeto ou automação">Outro projeto ou automação</option>
+                    </select>
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-j2fx-medium focus:border-j2fx-medium"
-                      required
-                    />
+                    <label htmlFor="name" className="mb-1 block text-sm font-semibold text-slate-700">Nome</label>
+                    <input id="name" name="name" value={formData.name} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" required />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="mb-1 block text-sm font-semibold text-slate-700">Email</label>
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" required />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="mb-1 block text-sm font-semibold text-slate-700">Telefone</label>
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" required />
+                  </div>
+                  <div>
+                    <label htmlFor="company" className="mb-1 block text-sm font-semibold text-slate-700">Empresa</label>
+                    <input id="company" name="company" value={formData.company} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" required />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label htmlFor="role" className="mb-1 block text-sm font-semibold text-slate-700">Cargo</label>
+                    <input id="role" name="role" value={formData.role} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" />
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Telefone
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-j2fx-medium focus:border-j2fx-medium"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                      Empresa
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-j2fx-medium focus:border-j2fx-medium"
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Mensagem
-                  </label>
+                <div className="mt-4">
+                  <label htmlFor="message" className="mb-1 block text-sm font-semibold text-slate-700">Mensagem</label>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Conte se você precisa de um site novo, landing page, manutenção ou melhoria do site atual."
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-j2fx-medium focus:border-j2fx-medium"
+                    placeholder="Conte o principal desafio: instabilidade, cloud, segurança, backup, suporte ou crescimento da operação."
+                    className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30"
                     required
-                  ></textarea>
+                  />
                 </div>
 
+                <label className="mt-4 flex items-start gap-3 text-sm text-slate-600">
+                  <input
+                    type="checkbox"
+                    name="newsletter"
+                    checked={formData.newsletter === 'sim'}
+                    onChange={handleChange}
+                    className="mt-1 h-4 w-4 rounded border-slate-300 text-j2fx-medium focus:ring-j2fx-accent"
+                  />
+                  Desejo receber atualizações sobre tecnologia, segurança e infraestrutura.
+                </label>
+
                 {submitError && (
-                  <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                  <div className="mt-5 rounded-md border border-red-200 bg-red-50 p-4">
                     <p className="text-red-700">{submitError}</p>
                   </div>
                 )}
 
-                <Button
-                  type="submit"
-                  className="w-full btn-primary"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Enviando...' : 'Receber proposta'}
+                <Button type="submit" className="mt-6 h-12 w-full rounded-md bg-j2fx-medium font-semibold text-white hover:bg-j2fx-ink" disabled={isSubmitting}>
+                  {isSubmitting ? 'Enviando...' : 'Solicitar diagnóstico gratuito'}
                 </Button>
               </form>
             )}

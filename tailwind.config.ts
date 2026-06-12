@@ -54,6 +54,7 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				j2fx: {
+					ink: '#0F1419',
 					dark: '#0F2B46',
 					medium: '#2A6496', 
 					light: '#4D97D1',

@@ -59,12 +59,12 @@
   }
 
   html {
-    font-family: 'Neo Tech', sans-serif;
+    font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
 
   .section-padding {
@@ -76,7 +76,7 @@
   }
 
   .gradient-bg {
-    background: linear-gradient(to right, #0F2B46, #2A6496);
+    background: linear-gradient(135deg, #07111d, #0f1419 52%, #123653);
   }
 
   .highlight-text {
@@ -105,6 +105,6 @@
   }
 
   .btn-primary {
-    @apply bg-j2fx-medium hover:bg-j2fx-dark text-white font-medium py-2 px-6 rounded-md transition-all duration-300 inline-flex items-center gap-2;
+    @apply bg-j2fx-medium hover:bg-j2fx-ink text-white font-medium py-2 px-6 rounded-md transition-all duration-300 inline-flex items-center gap-2;
   }
 }

@@ -3,8 +3,13 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs';
 import Services from '@/components/Services';
+import ProductSolutions from '@/components/ProductSolutions';
+import WorkProcess from '@/components/WorkProcess';
+import UseCases from '@/components/UseCases';
+import FAQ from '@/components/FAQ';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const Index = () => {
   useEffect(() => {
@@ -41,8 +46,13 @@ const Index = () => {
       <Hero />
       <AboutUs />
       <Services />
+      <ProductSolutions />
+      <WorkProcess />
+      <UseCases />
+      <FAQ />
       <CallToAction />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };

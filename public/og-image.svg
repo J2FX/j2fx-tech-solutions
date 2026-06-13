@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#07111D"/>
+      <stop offset=".55" stop-color="#0F1419"/>
+      <stop offset="1" stop-color="#123653"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".24" cy=".22" r=".55">
+      <stop stop-color="#00C8FF" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#00C8FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g opacity=".18" stroke="#FFFFFF">
+    <path d="M0 110h1200M0 220h1200M0 330h1200M0 440h1200M0 550h1200"/>
+    <path d="M140 0v630M280 0v630M420 0v630M560 0v630M700 0v630M840 0v630M980 0v630M1120 0v630"/>
+  </g>
+  <g transform="translate(84 78)">
+    <rect width="116" height="116" rx="22" fill="#00C8FF"/>
+    <text x="58" y="76" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#0F1419">J2</text>
+  </g>
+  <text x="84" y="285" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="#FFFFFF">J2FX Tecnologia</text>
+  <text x="84" y="360" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="600" fill="#D8F7FF">Infraestrutura de TI que escala com seu negócio</text>
+  <text x="84" y="424" font-family="Inter, Arial, sans-serif" font-size="28" fill="#CBD5E1">Cloud, segurança, suporte gerenciado, produtos digitais e automações.</text>
+  <rect x="84" y="486" width="330" height="58" rx="10" fill="#00C8FF"/>
+  <text x="249" y="524" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#0F1419">Diagnóstico gratuito</text>
+</svg>

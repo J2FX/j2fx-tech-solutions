@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
+# J2FX Tecnologia
 
-## Project info
+Site institucional da J2FX Tecnologia, com foco em infraestrutura de TI, cloud, segurança, suporte gerenciado, produtos digitais e automações.
 
-**URL**: https://lovable.dev/projects/ec42d4c7-0c2b-4f3d-a4a2-2dd69103f42b
+## Stack
 
-## How can I edit this code?
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Netlify Forms
 
-There are several ways of editing your application.
+## Requisitos
 
-**Use Lovable**
+- Node.js
+- npm
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ec42d4c7-0c2b-4f3d-a4a2-2dd69103f42b) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Instalação
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Desenvolvimento
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Por padrão, o Vite roda em `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Build
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Lint
 
-## What technologies are used for this project?
+```sh
+npm run lint
+```
 
-This project is built with:
+## Formulários
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+O formulário principal usa Netlify Forms. A definição estática fica em:
 
-## How can I deploy this project?
+- `public/__forms.html`
 
-Simply open [Lovable](https://lovable.dev/projects/ec42d4c7-0c2b-4f3d-a4a2-2dd69103f42b) and click on Share -> Publish.
+Campos principais:
 
-## Can I connect a custom domain to my Lovable project?
+- `interest`
+- `name`
+- `email`
+- `phone`
+- `company`
+- `role`
+- `message`
+- `newsletter`
 
-Yes, you can!
+## Estrutura Principal
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- `src/pages/Index.tsx`: homepage
+- `src/pages/BotImobiliarioFranca.tsx`: landing page do chatbot imobiliário
+- `src/components/Hero.tsx`: primeira dobra
+- `src/components/Services.tsx`: soluções de TI
+- `src/components/ProductSolutions.tsx`: produtos e automações
+- `src/components/WorkProcess.tsx`: processo de trabalho
+- `src/components/UseCases.tsx`: cenários comuns
+- `src/components/FAQ.tsx`: perguntas frequentes
+- `src/components/CallToAction.tsx`: formulário de contato
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Deploy
+
+O projeto está preparado para deploy estático na Netlify.
+
+Configuração:
+
+- `netlify.toml`
+- build command: `npm run build`
+- publish directory: `dist`

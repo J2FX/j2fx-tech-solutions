@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import fotoEdison from "./fotoedison.jpeg";
 
 export default function EdisonSoaresImoveis() {
   // --- Estados do Componente ---
@@ -199,8 +200,8 @@ export default function EdisonSoaresImoveis() {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8 bg-white/10 border border-white/20 backdrop-blur-md px-8 py-3 rounded-full">
-            <a href="#portfolio" className="text-xs uppercase tracking-editorial text-white hover:text-brass transition-colors font-medium">Portfólio</a>
-            <a href="#corretor" class="text-xs uppercase tracking-editorial text-white hover:text-brass transition-colors font-medium">O Corretor</a>
+<a href="#portfolio" className="text-xs uppercase tracking-editorial text-white hover:text-brass transition-colors font-medium">Portfólio</a>
+            <a href="#corretor" className="text-xs uppercase tracking-editorial text-white hover:text-brass transition-colors font-medium">O Corretor</a>
             <a href="#faq" className="text-xs uppercase tracking-editorial text-white hover:text-brass transition-colors font-medium">FAQ</a>
             <a href="#contato" className="text-xs uppercase tracking-editorial text-white hover:text-brass transition-colors font-medium">Contato</a>
           </nav>
@@ -247,7 +248,7 @@ export default function EdisonSoaresImoveis() {
 
         {/* Bottom Informational Strip Container */}
         <div className="w-full max-w-7xl mx-auto px-6 pb-8 z-10">
-          <div class="flex flex-col sm:flex-row justify-between items-center bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl sm:rounded-full border border-white/20 shadow-xl">
+<div className="flex flex-col sm:flex-row justify-between items-center bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl sm:rounded-full border border-white/20 shadow-xl">
             <div className="flex items-center space-x-2 text-xs font-medium text-gray-300 tracking-wide">
               <span>CRECI</span>
               <span className="text-white font-bold">309592-F</span>
@@ -283,7 +284,7 @@ export default function EdisonSoaresImoveis() {
             <div className="relative z-10">
               <span className="text-xs text-brass tracking-widest uppercase font-medium">Casa Contemporânea</span>
               <h3 className="font-serif text-2xl md:text-3xl font-light text-white mt-1 mb-2">Residência Santa Lúcia</h3>
-              <p class="text-stone text-xs md:text-sm font-light max-w-md mb-4">Linhas modernistas, integração total de ambientes com pé-direito duplo e acabamento em mármore travertino.</p>
+<p className="text-stone text-xs md:text-sm font-light max-w-md mb-4">Linhas modernistas, integração total de ambientes com pé-direito duplo e acabamento em mármore travertino.</p>
               <div className="flex items-center justify-between border-t border-white/10 pt-4">
                 <span className="font-serif text-xl text-white font-light">R$ 1.850.000</span>
                 <span className="text-xs text-brass luxury-link cursor-pointer uppercase tracking-wider">Ver detalhes</span>
@@ -398,7 +399,7 @@ export default function EdisonSoaresImoveis() {
           <div className="relative flex justify-center md:justify-start reveal-hidden">
             <div className="relative w-full max-w-md aspect-[4/5] bg-stone/10 overflow-hidden shadow-2xl">
               <img
-                src="/projetos/edison-soares-imoveis/fotoedison.jpeg"
+                src={fotoEdison}
                 alt="Edison Soares - Consultor Imobiliário de Alto Padrão"
                 className="w-full h-full object-cover grayscale brightness-95 hover:grayscale-0 transition-all duration-1000 ease-out"
                 loading="lazy"
@@ -411,7 +412,7 @@ export default function EdisonSoaresImoveis() {
           <div ref={statsSectionRef} className="flex flex-col justify-center reveal-hidden">
             <span className="text-xs uppercase tracking-editorial text-stone">O Corretor</span>
             <h2 className="font-serif text-4xl md:text-5xl font-light text-ink mt-2 mb-4">Edison Soares</h2>
-            <h4 class="text-xs uppercase tracking-editorial text-brass font-medium mb-6">Negociador. Consultor. Guardião de decisões importantes.</h4>
+<h4 className="text-xs uppercase tracking-editorial text-brass font-medium mb-6">Negociador. Consultor. Guardião de decisões importantes.</h4>
 
             <div className="space-y-4 text-stone font-light text-sm md:text-base leading-relaxed max-w-lg">
               <p>Atuar no mercado de altíssimo padrão exige mais do que intermediar transações financeiras; requer a sensibilidade de compreender o valor do tempo, o apreço pela discrição e o respeito ao patrimônio construído por uma vida.</p>
@@ -518,7 +519,7 @@ export default function EdisonSoaresImoveis() {
                 <span className="font-serif text-lg font-light text-white mt-1 block">Franca, SP — Brasil</span>
               </div>
               <div>
-                <span class="text-[10px] tracking-editorial uppercase text-stone block">Linha Direta de Urgência</span>
+<span className="text-[10px] tracking-editorial uppercase text-stone block">Linha Direta de Urgência</span>
                 <a href="https://wa.me/5516991212240" target="_blank" rel="noopener noreferrer" className="font-serif text-xl font-light text-brass hover:text-white transition-colors mt-1 block">(16) 99121-2240</a>
               </div>
             </div>

@@ -11,6 +11,7 @@ import EdisonSoaresImoveis from "./pages/projetos/site-imobiliaria-edison-soares
 
 const queryClient = new QueryClient();
 
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>

@@ -50,7 +50,7 @@ const benefits = [
 
 const audience = [
   { icon: UserRound, title: 'Corretores autônomos', text: 'Para quem atende sozinho e precisa ganhar velocidade no primeiro contato.' },
-  { icon: Building2, title: 'Imobiliárias pequenas e médias', text: 'Para equipes que recebem leads pelo WhatsApp e precisam padronizar a triagem.' },
+  { icon: Building2, title: 'Imobiliárias', text: 'Para equipes que recebem leads pelo WhatsApp e precisam padronizar a triagem.' },
   { icon: UsersRound, title: 'Profissionais com muitos contatos', text: 'Para quem anuncia imóveis e quer separar curiosos de oportunidades reais.' },
 ];
 
@@ -125,7 +125,7 @@ const BotImobiliarioFranca = () => {
               Um bot de WhatsApp para captar e qualificar leads imobiliários antes do atendimento humano.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl">
-              O Bot Imobiliário Franca ajuda corretores e pequenas imobiliárias a responder rápido,
+              O Bot Imobiliário Franca ajuda corretores e imobiliárias a responder rápido,
               filtrar interesse, organizar dados do cliente e receber um resumo claro de cada lead.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

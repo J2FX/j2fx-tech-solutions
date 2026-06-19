@@ -398,7 +398,7 @@ export default function EdisonSoaresImoveis() {
           <div className="relative flex justify-center md:justify-start reveal-hidden">
             <div className="relative w-full max-w-md aspect-[4/5] bg-stone/10 overflow-hidden shadow-2xl">
               <img
-                src="WhatsApp Image 2026-06-19 at 07.22.27.jpeg"
+                src="/projetos/edison-soares-imoveis/fotoedison.jpeg"
                 alt="Edison Soares - Consultor Imobiliário de Alto Padrão"
                 className="w-full h-full object-cover grayscale brightness-95 hover:grayscale-0 transition-all duration-1000 ease-out"
                 loading="lazy"

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Portfolio from '@/components/Portfolio';
 import AboutUs from '@/components/AboutUs';
 import Services from '@/components/Services';
-import ProductSolutions from '@/components/ProductSolutions';
 import WorkProcess from '@/components/WorkProcess';
 import UseCases from '@/components/UseCases';
 import FAQ from '@/components/FAQ';
@@ -44,9 +44,9 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <Hero />
+      <Portfolio />
       <AboutUs />
       <Services />
-      <ProductSolutions />
       <WorkProcess />
       <UseCases />
       <FAQ />
@@ -58,3 +58,5 @@ const Index = () => {
 };
 
 export default Index;
+
+

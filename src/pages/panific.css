@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Panific Inter';
+  src: url('/panific/InterVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+.panific-page {
+  position: relative;
+  background: #fafaf9;
+  color: #0c0a09;
+  font-family: 'Panific Inter', system-ui, sans-serif;
+}
+
+.panific-page section { scroll-margin-top: 24px; }
+.panific-page :is(a, summary):focus-visible {
+  outline: 3px solid #b45309;
+  outline-offset: 5px;
+}
+
+.panific-primary, .panific-secondary {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 150ms;
+}
+.panific-primary { background: #b45309; color: white; }
+.panific-primary:hover { background: #92400e; }
+.panific-secondary { border: 1px solid #d6d3d1; background: white; color: #292524; }
+.panific-secondary:hover { background: #f5f5f4; }
+.panific-nav-link { display: inline-flex; min-height: 48px; align-items: center; }
+.panific-nav-link:hover { color: #b45309; }

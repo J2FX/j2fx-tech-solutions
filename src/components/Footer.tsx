@@ -19,7 +19,7 @@ const Footer = () => {
               </h2>
             </div>
             <p className="max-w-md leading-7 text-slate-300">
-              Consultoria, infraestrutura, cloud, segurança e suporte para empresas que precisam de tecnologia confiável para operar e crescer.
+              Sites profissionais, sistemas, automações e infraestrutura de TI para empresas que querem operar melhor e crescer.
             </p>
             <div className="mt-6 flex gap-3">
               <a href="https://www.instagram.com/j2fxtecnologia" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 transition-colors hover:bg-j2fx-medium" aria-label="Instagram">
@@ -38,9 +38,8 @@ const Footer = () => {
             <h3 className="mb-5 text-lg font-semibold">Links rápidos</h3>
             <ul className="space-y-3">
               <li><a href="#home" className="text-slate-300 transition-colors hover:text-white">Início</a></li>
-              <li><a href="#about" className="text-slate-300 transition-colors hover:text-white">Sobre</a></li>
+              <li><a href="#projects" className="text-slate-300 transition-colors hover:text-white">Projetos</a></li>
               <li><a href="#services" className="text-slate-300 transition-colors hover:text-white">Soluções</a></li>
-              <li><a href="#products" className="text-slate-300 transition-colors hover:text-white">Produtos</a></li>
               <li><a href="#process" className="text-slate-300 transition-colors hover:text-white">Processo</a></li>
               <li><a href="#faq" className="text-slate-300 transition-colors hover:text-white">FAQ</a></li>
               <li><a href="#contact" className="text-slate-300 transition-colors hover:text-white">Contato</a></li>
@@ -77,3 +76,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+

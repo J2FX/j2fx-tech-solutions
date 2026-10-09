@@ -48,7 +48,7 @@ const WorkProcess = () => {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map(({ icon: Icon, title, description }, index) => (
-            <article key={title} className="relative rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+<article key={title} className="relative rounded-lg border border-slate-200 bg-white p-6 shadow-sm ">
               <div className="mb-5 flex items-center justify-between">
                 <div className="flex h-12 w-12 items-center justify-center rounded-md bg-j2fx-ink text-j2fx-accent">
                   <Icon className="h-6 w-6" />

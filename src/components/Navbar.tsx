@@ -4,9 +4,8 @@ import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Início', href: '#home' },
-  { name: 'Sobre', href: '#about' },
+  { name: 'Projetos', href: '#projects' },
   { name: 'Soluções', href: '#services' },
-  { name: 'Produtos', href: '#products' },
   { name: 'Processo', href: '#process' },
   { name: 'FAQ', href: '#faq' },
   { name: 'Contato', href: '#contact' },
@@ -36,7 +35,7 @@ const Navbar = () => {
           </span>
         </a>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -46,13 +45,13 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button asChild className="rounded-md bg-j2fx-accent font-semibold text-j2fx-ink hover:bg-white">
-            <a href="#contact">Diagnóstico gratuito</a>
+<Button asChild className="rounded-md bg-j2fx-accent font-semibold text-j2fx-ink hover:bg-white">
+            <a href="#contact">Solicitar orçamento</a>
           </Button>
         </div>
 
         <button
-          className="rounded-md p-2 text-white md:hidden"
+          className="rounded-md p-2 text-white lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         >
@@ -60,7 +59,7 @@ const Navbar = () => {
         </button>
 
         {isMenuOpen && (
-          <div className="absolute left-0 top-full w-full border-t border-white/10 bg-j2fx-ink/98 px-6 py-5 shadow-xl backdrop-blur md:hidden">
+          <div className="absolute left-0 top-full w-full border-t border-white/10 bg-j2fx-ink/98 px-6 py-5 shadow-xl backdrop-blur lg:hidden">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
@@ -72,8 +71,8 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button asChild className="self-start rounded-md bg-j2fx-accent font-semibold text-j2fx-ink hover:bg-white">
-                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Diagnóstico gratuito</a>
+<Button asChild className="self-start rounded-md bg-j2fx-accent font-semibold text-j2fx-ink hover:bg-white">
+                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Solicitar orçamento</a>
               </Button>
             </div>
           </div>
@@ -84,3 +83,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

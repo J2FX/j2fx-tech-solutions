@@ -39,7 +39,7 @@ const UseCases = () => {
 
         <div className="grid gap-6 lg:grid-cols-3">
           {useCases.map(({ icon: Icon, title, challenge, solution }) => (
-            <article key={title} className="rounded-lg border border-white/10 bg-white/6 p-6 backdrop-blur">
+<article key={title} className="rounded-lg border border-white/10 bg-white/6 p-6 backdrop-blur ">
               <Icon className="mb-5 h-9 w-9 text-j2fx-accent" />
               <h3 className="mb-4 text-xl font-bold">{title}</h3>
               <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-400">Desafio</p>

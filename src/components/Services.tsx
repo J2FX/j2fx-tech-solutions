@@ -3,11 +3,13 @@ import {
   CloudCog,
   DatabaseBackup,
   Gauge,
+  Globe,
   Headphones,
   Network,
   ShieldCheck,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { selectProjectInterest } from '@/data/projects';
 
 type ServiceCardProps = {
   icon: LucideIcon;
@@ -16,6 +18,7 @@ type ServiceCardProps = {
 };
 
 const services: ServiceCardProps[] = [
+  { icon: Globe, title: 'Desenvolvimento de sites', description: 'Sites institucionais e landing pages adaptados ao celular para apresentar sua empresa, divulgar produtos e facilitar pedidos de orçamento.' },
   {
     icon: Network,
     title: 'Consultoria de infraestrutura',
@@ -50,13 +53,13 @@ const services: ServiceCardProps[] = [
 
 const ServiceCard = ({ icon: Icon, title, description }: ServiceCardProps) => {
   return (
-    <article className="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-j2fx-accent/50 hover:shadow-xl">
+<article className="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-j2fx-accent/50 hover:shadow-xl ">
       <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-j2fx-ink text-j2fx-accent transition-colors duration-300 group-hover:bg-j2fx-accent group-hover:text-j2fx-ink">
         <Icon className="h-6 w-6" />
       </div>
       <h3 className="mb-3 text-xl font-bold text-j2fx-ink">{title}</h3>
       <p className="mb-5 leading-7 text-slate-600">{description}</p>
-      <a href="#contact" className="inline-flex items-center gap-2 font-semibold text-j2fx-medium hover:text-j2fx-ink">
+      <a href="#contact" onClick={() => selectProjectInterest(title === 'Desenvolvimento de sites' ? 'Site ou landing page' : 'Infraestrutura, cloud e suporte')} className="inline-flex items-center gap-2 font-semibold text-j2fx-medium hover:text-j2fx-ink">
         Explorar solução
         <ArrowRight className="h-4 w-4" />
       </a>
@@ -71,10 +74,10 @@ const Services = () => {
         <div className="mb-14 max-w-3xl">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-j2fx-medium">Soluções</p>
           <h2 className="mb-5 text-3xl font-bold text-j2fx-ink md:text-4xl">
-            Tecnologia organizada para a operação não parar
+            Da presença digital à estrutura da sua empresa
           </h2>
           <p className="text-lg leading-8 text-slate-600">
-            Atuamos onde infraestrutura, suporte e segurança se conectam ao resultado do negócio: menos improviso, mais previsibilidade e decisões técnicas com clareza.
+            Criamos experiências digitais e sustentamos a tecnologia da operação. Escolha o ponto de partida: um site, uma automação ou uma estrutura de TI mais organizada.
           </p>
         </div>
 
@@ -89,3 +92,4 @@ const Services = () => {
 };
 
 export default Services;
+

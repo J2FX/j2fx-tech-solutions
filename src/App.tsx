@@ -4,10 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Panific from "./pages/Panific";
+import ProjectDetails from "./pages/ProjectDetails";
 import NotFound from "./pages/NotFound";
 import BotImobiliarioFranca from "./pages/BotImobiliarioFranca";
 import AtendimentoWhatsApp from "./pages/AtendimentoWhatsApp";
-import EdisonSoaresImoveis from "./pages/projetos/site-imobiliaria-edison-soares";
 
 const queryClient = new QueryClient();
 
@@ -20,13 +21,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/panific" element={<Panific />} />
+          <Route path="/projetos/:slug" element={<ProjectDetails />} />
           <Route path="/bot-imobiliario-franca" element={<BotImobiliarioFranca />} />
           <Route path="/atendimento-whatsapp" element={<AtendimentoWhatsApp />} />
-
-          <Route
-            path="/projetos/edison-soares-imoveis"
-            element={<EdisonSoaresImoveis />}
-          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -36,3 +34,5 @@ const App = () => (
 );
 
 export default App;
+
+

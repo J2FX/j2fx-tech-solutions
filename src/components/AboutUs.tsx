@@ -35,7 +35,7 @@ const AboutUs = () => {
 
           <div className="grid gap-4 md:grid-cols-3">
             {pillars.map(({ icon: Icon, title, description }) => (
-              <article key={title} className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+<article key={title} className="rounded-lg border border-slate-200 bg-slate-50 p-5 ">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-j2fx-ink text-j2fx-accent">
                   <Icon className="h-5 w-5" />
                 </div>

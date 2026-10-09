@@ -46,7 +46,7 @@ export default function FAQ() {
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="rounded-lg border border-slate-200 bg-slate-50 px-5">
+<Accordion type="single" collapsible className="rounded-lg border border-slate-200 bg-slate-50 px-5 ">
           {faqs.map((faq, index) => (
             <AccordionItem key={faq.question} value={`item-${index}`} className="border-slate-200">
               <AccordionTrigger className="text-left text-base font-bold text-j2fx-ink hover:text-j2fx-medium hover:no-underline">

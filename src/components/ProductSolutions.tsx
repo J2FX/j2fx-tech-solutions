@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   Bot,
+  Store,
   CalendarClock,
   ClipboardList,
   MessageSquare,
@@ -22,6 +23,18 @@ type Product = {
 };
 
 const products: Product[] = [
+  {
+    icon: Store,
+    segment: 'Pequenos e médios negócios',
+    title: 'Panific',
+    status: 'Em validação',
+    description: 'Ainda anota vendas no papel? Registre suas vendas, organize produtos e acompanhe o caixa pelo celular com o Panific, para negócios de diferentes segmentos.',
+    outcomes: ['PDV e caixa', 'Produtos e categorias', 'Relatórios de vendas'],
+    interest: 'Panific',
+    whatsappMessage: 'Olá! Quero conhecer o Panific e agendar uma demonstração com a J2FX.',
+    href: '/panific',
+    cta: 'Conhecer Panific',
+  },
   {
     icon: Bot,
     segment: 'Imobiliárias',
@@ -103,9 +116,9 @@ const ProductSolutions = () => {
 
         <div className="grid gap-6 lg:grid-cols-2">
           {products.map(({ icon: Icon, segment, title, status, description, outcomes, interest, whatsappMessage, href, cta }) => (
-            <article
+<article
               key={title}
-              className="group rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-j2fx-accent/50 hover:bg-white hover:shadow-xl"
+              className={`group flex flex-col rounded-xl border p-6 transition-colors ${title === 'Panific' ? 'border-amber-200 bg-amber-50/60 lg:col-span-2' : 'border-slate-200 bg-slate-50 hover:border-slate-300 hover:bg-white'}`}
             >
               <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
                 <div className="flex items-center gap-4">

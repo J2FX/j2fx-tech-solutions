@@ -102,10 +102,10 @@ const CallToAction = () => {
           <div>
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-j2fx-accent">Contato</p>
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-              Solicite um diagnóstico gratuito da sua estrutura de TI
+              Vamos conversar sobre seu próximo projeto?
             </h2>
             <p className="mb-8 text-lg leading-8 text-slate-300">
-              Conte rapidamente o cenário da empresa. A J2FX retorna com uma leitura inicial e o melhor próximo passo para infraestrutura, segurança, cloud ou suporte.
+              Você precisa de um site, sistema, automação ou apoio em TI? Conte sua ideia e receba um direcionamento sobre escopo e próximos passos.
             </p>
 
             <div className="space-y-5">
@@ -146,9 +146,9 @@ const CallToAction = () => {
             </div>
           </div>
 
-          <div className="rounded-lg border border-white/10 bg-white p-6 text-j2fx-ink shadow-2xl md:p-8">
-            <h3 className="mb-2 text-2xl font-bold">Agendar diagnóstico</h3>
-            <p className="mb-6 text-slate-600">Preencha os dados para a J2FX entender seu cenário.</p>
+<div className="rounded-lg border border-white/10 bg-white p-6 text-j2fx-ink shadow-2xl md:p-8 ">
+            <h3 className="mb-2 text-2xl font-bold">Solicitar orçamento</h3>
+            <p className="mb-6 text-slate-600">Escolha o que precisa e conte um pouco da sua ideia.</p>
 
             {submitSuccess ? (
               <div className="rounded-md border border-emerald-200 bg-emerald-50 p-4">
@@ -186,6 +186,12 @@ const CallToAction = () => {
                       <option value="Infraestrutura, cloud e suporte">Infraestrutura, cloud e suporte</option>
                       <option value="Chatbot imobiliário">Chatbot imobiliário</option>
                       <option value="Controle de vendas">Controle de vendas</option>
+                      <option value="Panific">Panific — PDV e gestão de vendas</option>
+                      <option value="Site ou landing page">Site ou landing page</option>
+                      <option value="Sistema web ou automação">Sistema web ou automação</option>
+                      <option value="Mural Digital">Mural Digital</option>
+                      <option value="Corretor-360">Corretor-360</option>
+                      <option value="Chat Bot">Chat Bot</option>
                       <option value="Perfect Teams">Perfect Teams</option>
                       <option value="Chatbot para reservas em restaurantes">Chatbot para reservas em restaurantes</option>
                       <option value="Outro projeto ou automação">Outro projeto ou automação</option>
@@ -200,12 +206,12 @@ const CallToAction = () => {
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" required />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="mb-1 block text-sm font-semibold text-slate-700">Telefone</label>
-                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" required />
+                    <label htmlFor="phone" className="mb-1 block text-sm font-semibold text-slate-700">Telefone (opcional)</label>
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" />
                   </div>
                   <div>
-                    <label htmlFor="company" className="mb-1 block text-sm font-semibold text-slate-700">Empresa</label>
-                    <input id="company" name="company" value={formData.company} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" required />
+                    <label htmlFor="company" className="mb-1 block text-sm font-semibold text-slate-700">Empresa (opcional)</label>
+                    <input id="company" name="company" value={formData.company} onChange={handleChange} className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30" />
                   </div>
                   <div className="sm:col-span-2">
                     <label htmlFor="role" className="mb-1 block text-sm font-semibold text-slate-700">Cargo</label>
@@ -221,7 +227,7 @@ const CallToAction = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Conte o principal desafio: instabilidade, cloud, segurança, backup, suporte ou crescimento da operação."
+                    placeholder="O que sua empresa faz? O que você quer apresentar, organizar ou automatizar? Se houver, informe o prazo desejado."
                     className="w-full rounded-md border border-slate-300 px-4 py-2 focus:border-j2fx-medium focus:outline-none focus:ring-2 focus:ring-j2fx-accent/30"
                     required
                   />
@@ -245,7 +251,7 @@ const CallToAction = () => {
                 )}
 
                 <Button type="submit" className="mt-6 h-12 w-full rounded-md bg-j2fx-medium font-semibold text-white hover:bg-j2fx-ink" disabled={isSubmitting}>
-                  {isSubmitting ? 'Enviando...' : 'Solicitar diagnóstico gratuito'}
+                  {isSubmitting ? 'Enviando...' : 'Enviar pedido de orçamento'}
                 </Button>
               </form>
             )}
@@ -257,3 +263,4 @@ const CallToAction = () => {
 };
 
 export default CallToAction;
+
